@@ -1,44 +1,29 @@
 package Exam;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
-public class exam005 {
+public class exam005 { //교재의 슈도코드를 보고 작성하였습니다.
     public static void main(String[] args) throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-
-        st = new StringTokenizer(bf.readLine());
-        int[] arr = new int[N];
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
         int[] S = new int[N];
-        for(int i = 0; i < N; i++){
-            arr[i] = Integer.parseInt(st.nextToken());
-            if(i == 0){
-                S[0] = arr[0];
-                continue;
-            }
-            S[i] = S[i-1] + arr[i]; //합배열
+        int[] C = new int[10]; //나머지 카운트 셀 배열
+
+        S[0] = sc.nextInt();
+        for(int i = 1; i < N; i++){
+            S[i] = sc.nextInt();
+            S[i] += S[i-1]; //합배열
         }
 
         int count = 0;
-        int d = 0;
+        int remainer = 0;
         for(int i = 0; i < N; i++){
-            for(int j = N-1; j > 0; j--) {
-                if (i == 0){
-                    if(S[j] % M == 0) count++;
-                }
-
-                else if (i > 0){
-                    d = S[j] - S[i-1];
-                    if(d % M == 0) count++;
-                }
-            }
-
+            remainer = S[i] % M;
+            if(remainer == 0) count++;
+            C[remainer]++;
         }
+        for(int i = 0; i < 10; i++) if(C[i] != 0) count += C[i] * (C[i] - 1) / 2;
         System.out.println(count);
     }
 }
