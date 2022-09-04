@@ -1,12 +1,13 @@
-N = 5;
-M = 3;
-arr = [0, 5, 4, 3, 2, 1];
-Sarr = [0, 5];
+N, M = map(int, input().split()); # N, M 할당
+arr = [0];
+arr = list(map(int, input().split())); # arr 배열 받기
 
-for k in range (2, 6):
-    Sarr.append(Sarr[k - 1] + arr[k]);
+Sarr = [];
+plus = 0;
+for i in arr: # 합배열 만들기
+    plus += i;
+    Sarr.append(plus);
 
-i = 1;
-j = 3;
-
-print(Sarr[j] - Sarr[i - 1]);
+for k in range(M):
+    i, j = map(int, input().split());
+    print(Sarr[j + 1] - Sarr[i - 1]);
