@@ -11,8 +11,8 @@ def solution(dataStr):
     mydeque = deque(map(int, dataArr[1].split()))
     numbersList = dataArr[1].split()
     
-    for i in numbersList:
-        while (not mydeque.empty & mydeque.)
+#     for i in numbersList:
+#         while (not mydeque.empty & mydeque.)
 
 
 solution(data)
