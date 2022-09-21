@@ -7,7 +7,7 @@ def solution(dataStr):
     myStack.append(0)
 
     for i in range(1, n):
-        while len(myStack) > 0 and A[myStack[0]] < A[i]:
+        while len(myStack) > 0 and A[myStack[len(myStack) - 1]] < A[i]:
             ans[myStack.pop()] = A[i]
         myStack.append(i)
     
@@ -18,5 +18,7 @@ def solution(dataStr):
         print(ans[i], end=" ")
 
 
-data = "4\n9 5 4 8"
-solution(data)
+data1 = "4\n3 5 2 7"
+data2 = "4\n9 5 4 8"
+solution(data1)
+# solution(data2)
