@@ -4,8 +4,8 @@ import heapq
 N = int(stdin.readline())
 heap = []
 
-for _ in range(N):
-    num = int(stdin.readline())
+for i in range(N):
+    num = int(stdin.readline().rstrip())
     if not num == 0:
         heapq.heappush(heap, (abs(num), num))
     else:
