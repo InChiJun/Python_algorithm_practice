@@ -6,11 +6,11 @@ A = []
 for i in range(N):
     A.append((int(stdin.readline().rstrip()), i))
 
-sortedA = sorted(A)
+A.sort()
 max = 0
 
 for j in range(N):
-    index = sortedA[j][1] - j
+    index = A[j][1] - j
     if (index > max):
         max = index
 
