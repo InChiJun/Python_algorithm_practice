@@ -1,9 +1,10 @@
-def strSum(N, str):
-    sum = 0;
+from sys import stdin
 
-    for i in range(N):
-        sum += int(str[i]);
+N = int(stdin.readline().rstrip())
+str = list(stdin.readline().rstrip())
+sum = 0
+
+for i in range(N):
+    sum += int(str[i])
     
-    print(sum);
-
-strSum(5, "54321");
+print(sum)
