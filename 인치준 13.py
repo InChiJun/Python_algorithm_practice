@@ -1,13 +1,11 @@
-import queue
+from collections import deque
 
 N = int(input())
-myQueue = queue.Queue()
+deque = deque([i for i in range(1, N+1)])
 
-for i in range(1, N + 1):
-    myQueue.put(i)
-
-while myQueue.qsize() > 1:
-    myQueue.get()
-    myQueue.put(myQueue.get())
-
-print(myQueue.get())
+while(len(deque) >1):
+    deque.popleft()
+    move_num = deque.popleft()
+    deque.append(move_num)
+    
+print(deque[0])
