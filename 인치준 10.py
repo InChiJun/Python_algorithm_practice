@@ -4,7 +4,6 @@ from sys import stdin
 n, k = list(map(int, stdin.readline().split()))
 arr = list(map(int, stdin.readline().split()))
 q = deque()
-ans = []
 
 for i in range(n):
     while q and q[-1][0] > arr[i]:

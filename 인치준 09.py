@@ -1,10 +1,10 @@
 from sys import stdin
 
 S, P = map(int, stdin.readline().split())
-dna = list(input())
+dna = list(stdin.readline())
 tmp = list(map(int, stdin.readline().split()))
-dic = {'A': tmp[0], 'C': tmp[1], 'G': tmp[2], 'T': tmp[3]}
-base = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
+check = {'A': tmp[0], 'C': tmp[1], 'G': tmp[2], 'T': tmp[3]}
+current = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
 
 count = 0
 for i in range(S-P+1):
@@ -12,13 +12,13 @@ for i in range(S-P+1):
 
     if i == 0:
         for j in range(P):
-            base[dna[j]] += 1
+            current[dna[j]] += 1
     else:
-        base[dna[i+P-1]] += 1
-        base[dna[i-1]] -= 1
+        current[dna[i+P-1]] += 1
+        current[dna[i-1]] -= 1
 
     for i in ('A', 'C', 'G', 'T'):
-        if base[i] < dic[i]:
+        if current[i] < check[i]:
             flag = False
             break
 

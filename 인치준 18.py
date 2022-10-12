@@ -1,7 +1,7 @@
 from sys import stdin
 
 N = int(stdin.readline().rstrip())
-A = list(map(int, stdin.readline().split(' ')))
+A = list(map(int, stdin.readline().split()))
 S = [0 for i in range(N)]
 
 for i in range(1, N):
