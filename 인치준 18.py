@@ -30,10 +30,3 @@ for i in range(N):
     sum += S[i]
 
 print(sum)
-
-
-
-
-
-# 5
-# 3 1 4 3 2

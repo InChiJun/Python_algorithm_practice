@@ -1,3 +1,5 @@
+# 백준 시간 초과
+
 from sys import stdin
 
 N, K = map(int, stdin.readline().split())
