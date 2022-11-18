@@ -8,4 +8,7 @@ q = PriorityQueue()
 for i in range(n):
     q.put(int(input().rstrip()))
 
-# while(not len(q) == 0):
+# while(not len(q) == 1):
+#     q.put(q.get() + q.get())
+
+# print(q.)
